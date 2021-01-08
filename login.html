@@ -28,7 +28,7 @@
                         <img src="./img/picture6.png" alt="">
                     </div>
                     <div class="col-6">
-                        <div class="login hidden">
+                        <div class="login">
                             <form name="loginForm">
                                 <div class="mb-3">
                                     <label class="form-label">Username</label>
@@ -43,8 +43,8 @@
                                 <button class="btn w-100" type="button">Login</button>
                             </form>
                         </div>
-                        <div class="register">
-                            <form name="registerForm">
+                        <div class="register hidden">
+                            <form name="registerForm" onsubmit="register()">
                                 <div class="mb-3">
                                     <label class="form-label">Full Name</label>
                                     <input type="text" name="name" class="form-control" placeholder="Alfamart">
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="form-text m-2">Do you have an account? let's <span class="register-link"><a
                                             href="#" onclick="showHide()">Login</a></span> now!</div>
-                                <button class="btn w-100" type="button">Register</button>
+                                <button class="btn w-100" type="submit">Register</button>
                             </form>
                         </div>
                     </div>

@@ -6,6 +6,9 @@ const admin = [{
 let loginSession;
 let userLogin = "";
 
+let kasir = JSON.parse(localStorage.getItem('userKasir'));
+let userSession = JSON.parse(localStorage.getItem('userLogin'));
+
 const showHide = () => {
     document.querySelector('.login').classList.toggle('hidden');
     document.querySelector('.register').classList.toggle('hidden');
@@ -17,18 +20,24 @@ const register = () => {
     let form = document.registerForm
 
     let dataKasir = {}
-    dataKasir.name = form.name.value;
-    dataKasir.username = form.username.value;
-    dataKasir.password = form.password.value;
 
-    userKasir.push(dataKasir);
+    for (let i = 0; i < kasir.length; i++) {
+        if((form.username.value != admin[0].username) && form.username.value != kasir.username){
+            dataKasir.name = form.name.value;
+            dataKasir.username = form.username.value;
+            dataKasir.password = form.password.value;
+            userKasir.push(dataKasir);
+            alert("Register Berhasil!!");
+        }else{
+            alert("Username sudah digunakan!!")
+        }
+    }
+
+
 
     localStorage.setItem('userKasir', JSON.stringify(userKasir));
     form.reset();
 }
-
-let kasir = JSON.parse(localStorage.getItem('userKasir'));
-let userSession = JSON.parse(localStorage.getItem('userLogin'));
 
 var attempt = 3; // Variable to count number of attempts.
 // Below function Executes on click of login button.

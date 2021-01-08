@@ -8,6 +8,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
+    <script src="./js/login.js" defer></script>
 
 </head>
 
@@ -28,33 +29,37 @@
                     </div>
                     <div class="col-6">
                         <div class="login hidden">
-                            <form>
+                            <form name="loginForm">
                                 <div class="mb-3">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" placeholder="Admin">
+                                    <input type="text" name="username" class="form-control" placeholder="Admin">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-text m-2">Don't have an account? let's <span class="register-link"><a
-                                            href="#">Register</a></span> first!</div>
-                                <button class="btn w-100">Login</button>
+                                            href="#" onclick="showHide()">Register</a></span> first!</div>
+                                <button class="btn w-100" type="button">Login</button>
                             </form>
                         </div>
                         <div class="register">
-                            <form>
+                            <form name="registerForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Alfamart">
+                                </div>
                                 <div class="mb-3">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" placeholder="Admin">
+                                    <input type="text" name="username" class="form-control" placeholder="Admin">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-text m-2">Do you have an account? let's <span class="register-link"><a
-                                            href="#">Login</a></span> now!</div>
-                                <button class="btn w-100">Register</button>
+                                            href="#" onclick="showHide()">Login</a></span> now!</div>
+                                <button class="btn w-100" type="button">Register</button>
                             </form>
                         </div>
                     </div>

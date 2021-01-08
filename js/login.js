@@ -27,7 +27,7 @@ const register = () => {
     form.reset();
 }
 
-let userKasir = JSON.parse(localStorage.getItem('userKasir'));
+let kasir = JSON.parse(localStorage.getItem('userKasir'));
 let userSession = JSON.parse(localStorage.getItem('userLogin'));
 
 var attempt = 3; // Variable to count number of attempts.
@@ -52,8 +52,8 @@ function validate() {
         alert("your password is wrong, please enter the correct password!!");
         alert("You have left " + attempt + " attempt;");
     } else {
-        for (let i = 0; i < userKasir.length; i++) {
-            if (userKasir[i].username == username && password == userKasir[i].password) {
+        for (let i = 0; i < kasir.length; i++) {
+            if (kasir[i].username == username && password == kasir[i].password) {
                 alert("Login successfully");
                 loginSession = true
                 localStorage.setItem('loginSession', JSON.stringify(loginSession));

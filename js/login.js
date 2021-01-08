@@ -4,7 +4,7 @@ const admin = [{
     password: "admin"
 }]
 let loginSession;
-let userLogin;
+let userLogin = "";
 
 const showHide = () => {
     document.querySelector('.login').classList.toggle('hidden');
@@ -33,6 +33,7 @@ let userSession = JSON.parse(localStorage.getItem('userLogin'));
 var attempt = 3; // Variable to count number of attempts.
 // Below function Executes on click of login button.
 function validate() {
+    event.preventDefault()
     let form = document.loginForm
     let username = form.username.value;
     let password = form.password.value;
@@ -77,15 +78,15 @@ function validate() {
     }
     loginSession = false;
 }
+console.log(kasir);
 
 const checkLogin = () => {
     if (localStorage.loginSession == "true") {
         if (userSession.toUpperCase() == admin[0].username.toUpperCase()) {
             window.location.href = "index.html";
             return;
-        } else if(userSession.toUpperCase() == adminOut[0].username.toUpperCase()){
-            window.location.href = "getOut.html";
-            return;
+        } else{
+            return
         }
     }
 }

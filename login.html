@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body onload="checkLogin()">
     <section>
         <div class="header">
             <nav class="navbar navbar-light">
@@ -29,18 +29,18 @@
                     </div>
                     <div class="col-6">
                         <div class="login">
-                            <form name="loginForm">
+                            <form name="loginForm" onsubmit="validate()">
                                 <div class="mb-3">
                                     <label class="form-label">Username</label>
-                                    <input type="text" name="username" class="form-control" placeholder="Admin">
+                                    <input type="text" name="username" class="form-control" placeholder="Admin" id="username">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" id="password">
                                 </div>
                                 <div class="form-text m-2">Don't have an account? let's <span class="register-link"><a
                                             href="#" onclick="showHide()">Register</a></span> first!</div>
-                                <button class="btn w-100" type="button">Login</button>
+                                <button class="btn w-100" type="submit" id="submit">Login</button>
                             </form>
                         </div>
                         <div class="register hidden">
